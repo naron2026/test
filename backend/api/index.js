@@ -4,7 +4,7 @@ const connectDB = require("../config/db");
 
 module.exports = async (req, res) => {
   try {
-    await connectDB(); hello world
+    await connectDB();
     return app(req, res);
   } catch (error) {
     return res.status(500).json({ message: "Database connection failed" });
