@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../../src/api";
 import toast, { Toaster } from "react-hot-toast";
 
 function ProductTypeForm({ defaultData, handleView, isEdit }) {
@@ -85,8 +85,7 @@ function ProductTypeForm({ defaultData, handleView, isEdit }) {
             <button
               type="button"
               className="btn bg-base-200 mt-4 text-black"
-              onClick={handleView}
-            >
+              onClick={handleView}>
               បោះបង់
             </button>
             <button type="submit" className="btn btn-success mt-4 text-white">

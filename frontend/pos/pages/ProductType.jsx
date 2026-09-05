@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import QueryContext from "../context/QueryContext";
 
 import MasterPage from "../pages/MasterPage";
-import axios from "axios";
+import axios from "../src/api";
 import Table from "../components/Table/Table";
 import ProductTypeForm from "../components/ProductType/ProductTypeForm";
 import toast, { Toaster } from "react-hot-toast";

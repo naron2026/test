@@ -1,5 +1,5 @@
 import { RiPlayLargeFill, RiPlayReverseLargeFill } from "react-icons/ri";
-import axios from "axios";
+import axios from "../../src/api";
 import { useEffect, useState, useContext } from "react";
 import QueryContext from "../../context/QueryContext";
 import useQuery from "../../hooks/useQuery";
@@ -17,7 +17,6 @@ function TableFilter({ setData, endPoint }) {
   }
 
   useEffect(() => {
-
     if (!loading) {
       setData(result.data);
       setQuery((prev) => ({
@@ -26,7 +25,6 @@ function TableFilter({ setData, endPoint }) {
         total_page: result.total_page,
       }));
     }
-
   }, [loading]);
 
   return (
@@ -34,8 +32,7 @@ function TableFilter({ setData, endPoint }) {
       <select
         className="select w-fit pr-8"
         value={query.limit}
-        onChange={(e) => changeValue("limit", e.target.value)}
-      >
+        onChange={(e) => changeValue("limit", e.target.value)}>
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
@@ -47,15 +44,13 @@ function TableFilter({ setData, endPoint }) {
         <svg
           className="h-[1em] opacity-50"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
+          viewBox="0 0 24 24">
           <g
             strokeLinejoin="round"
             strokeLinecap="round"
             strokeWidth="2.5"
             fill="none"
-            stroke="currentColor"
-          >
+            stroke="currentColor">
             <circle cx="11" cy="11" r="8"></circle>
             <path d="m21 21-4.3-4.3"></path>
           </g>
@@ -88,8 +83,7 @@ function TableFooter({ setData }) {
               page: query.page - 1,
             }));
           }}
-          disabled={query.page == 1}
-        >
+          disabled={query.page == 1}>
           <RiPlayReverseLargeFill />{" "}
         </button>
         <button className="btn join-item text-gray-600 bold " disabled>
@@ -103,8 +97,7 @@ function TableFooter({ setData }) {
               page: query.page + 1,
             }));
           }}
-          disabled={query.total_page == query.page}
-        >
+          disabled={query.total_page == query.page}>
           <RiPlayLargeFill />
         </button>
       </div>
